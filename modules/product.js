@@ -106,7 +106,7 @@ exports.getProducts = (req, res, next) => {
     const beginIndex = (page - 1) * pageSize;
 
     setTimeout(() => {
-        res.json({
+        res.send({
             page: page,
             pageSize: pageSize,
             total: matchingProducts.length,
