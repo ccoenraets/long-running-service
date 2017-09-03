@@ -1,4 +1,4 @@
-# Long Running Process Simulator
+# Long Running Service Simulator
 
 Sample REST service that allows you to simulate network latency.
 
