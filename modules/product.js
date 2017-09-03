@@ -88,7 +88,7 @@ exports.getProducts = (req, res, next) => {
         search = req.query.search,
         min = req.query.min,
         max = req.query.max,
-        duration = req.query.duration;
+        latency = req.query.latency;
 
     let matchingProducts = products.filter((product) => {
         if (search && !product.name.match(new RegExp(search, 'i'))) {
@@ -112,14 +112,14 @@ exports.getProducts = (req, res, next) => {
             total: matchingProducts.length,
             products: matchingProducts.slice(beginIndex, beginIndex + pageSize)
         });
-    }, duration);
+    }, latency);
 
 };
 
 exports.getProductById = (req, res, next) => {
-    const duration = req.query.duration;
+    const latency = req.query.latency;
     const id = req.params.productId;
     setTimeout(() => {
         res.json(products[id]);
-    }, duration);
+    }, latency);
 }
